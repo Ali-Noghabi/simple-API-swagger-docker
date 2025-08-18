@@ -1,0 +1,24 @@
+FROM python:3.9-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the entire `src` directory to `/app/src` in the container
+COPY src /app/src/
+
+# Copy the requirements file to /app
+COPY src/requirements.txt /app/
+
+# Install dependencies with specific versions
+RUN pip install --upgrade pip
+RUN pip install -r /app/requirements.txt
+
+# Expose the port for the webserver
+EXPOSE 5001
+
+# Set the PYTHONPATH so that the 'src' folder is included
+ENV PYTHONPATH=/app/src
+
+# Command to run the webserver and then run the tests
+CMD ["bash", "-c", "python /app/src/app.py"]
+# CMD ["bash", "-c", "python /app/src/app.py & sleep 5 && pytest /app/src/test_api.py"]
