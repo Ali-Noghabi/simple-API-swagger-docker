@@ -74,7 +74,3 @@ A minimal, reusable template for serving a Python Flask API with Swagger UI for 
 - **Port Conflicts**: Check with `netstat -tuln | grep -E '5000|5001'` and update `docker-compose.yml`.
 - **Swagger UI Failure**: Ensure `http://localhost:5000/static/swagger.yml` is accessible.
 
-## License
-MIT License (create a `LICENSE` file if needed).
-
-This project is a simple starting point for building and documenting APIs with Docker. Extend it by customizing `src/app.py` and `static/swagger.yml` for your needs!
