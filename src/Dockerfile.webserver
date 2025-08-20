@@ -20,5 +20,5 @@ EXPOSE 5001
 ENV PYTHONPATH=/app/src
 
 # Command to run the webserver and then run the tests
-CMD ["bash", "-c", "python /app/src/app.py"]
-# CMD ["bash", "-c", "python /app/src/app.py & sleep 5 && pytest /app/src/test_api.py"]
+# CMD ["bash", "-c", "python /app/src/app.py"]
+CMD ["bash", "-c", "python /app/src/app.py & sleep 5 && pytest /app/src/test_api.py && tail -f /dev/null"]

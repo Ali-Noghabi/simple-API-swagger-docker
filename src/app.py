@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 # Enable CORS for all routes
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:5000"}})
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Sample GET API with URL Parameter
 @app.route('/api/v1/sample-get-api/<string:name>', methods=['GET'])
